@@ -1,11 +1,22 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/about', [PageController::class, 'about'])->name('about');
+Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::post('/contact', [PageController::class, 'sendContact'])->name('contact.send');
+Route::get('/certificate', [PageController::class, 'certificate'])->name('certificate');
+
+
+Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolios');
+Route::get('/portfolio/{slug}', [PortfolioController::class, 'show'])->name('portfolios.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
