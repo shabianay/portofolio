@@ -37,54 +37,9 @@ class PageController extends Controller
 
     public function certificate()
     {
-        $certImgs = collect([
-            'Sertifikat-Mentor-INLAB-Shabian-Arsyl-Yonanta_page-0001-1-1-scaled.png',
-            'Frame-1-11-scaled.png',
-            'Frame-1-30-scaled.png',
-            'Frame-1-15-scaled.png',
-            'Frame-1-4-scaled.png',
-            'Frame-1-14-scaled.png',
-            'Frame-1-5-scaled.png',
-            'Frame-1-8-1-scaled.png',
-            'Frame-1-5-1-scaled.png',
-            'Frame-1-6-1-scaled.png',
-            'Frame-1-10-scaled.png',
-            'Frame-1-7-scaled.png',
-            'Frame-1-9-scaled.png',
-            'Frame-1-6-scaled.png',
-            'Frame-1-3-scaled.png',
-            'Frame-1-2-scaled.png',
-            'Frame-1-1-scaled.png',
-            'Frame-1-29-scaled.png',
-            'Frame-1-28-scaled.png',
-            'Frame-1-27-scaled.png',
-            'Frame-1-26-scaled.png',
-            'Frame-1-25-scaled.png',
-            'Frame-1-24-scaled.png',
-            'Frame-1-23-scaled.png',
-            'Frame-1-22-scaled.png',
-            'Frame-1-21-scaled.png',
-            'Frame-1-20-scaled.png',
-            'Frame-1-19-scaled.png',
-            'Frame-1-18-scaled.png',
-            'Frame-1-17-scaled.png',
-            'Frame-1-16-scaled.png',
-            'Frame-1-13-scaled.png',
-            'Frame-1-12-scaled.png',
-            'Frame-1-8-scaled.png',
-            'Sertifikat_Shabian-Arsyl-Yonantaa_page-0023.jpg',
-        ]);
+        $courses = \App\Models\Certificate::where('type', 'url')->orderBy('id')->get();
+        $certificates = \App\Models\Certificate::where('type', 'image')->orderBy('id')->paginate(8);
 
-        $page = request()->integer('page', 1);
-        $perPage = 8;
-        $certificates = new LengthAwarePaginator(
-            $certImgs->forPage($page, $perPage)->values(),
-            $certImgs->count(),
-            $perPage,
-            $page,
-            ['path' => request()->url(), 'query' => request()->query()]
-        );
-
-        return view('pages.certificate', compact('certificates'));
+        return view('pages.certificate', compact('courses', 'certificates'));
     }
 }

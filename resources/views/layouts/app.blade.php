@@ -4,9 +4,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="description" content="@yield('meta_description', 'Portfolio Shabian Arsyl Yonanta - Junior Web Developer, WordPress Developer & UI/UX Designer. Crafting digital experiences with clean code and creative design.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'Shabian Arsyl Yonanta, portfolio, web developer, WordPress, UI/UX designer, Laravel, PHP, Surabaya')">
+    <link rel="canonical" href="{{ url()->current() }}">
     <link rel="icon" type="image/png" href="/favicon.png">
     <title>@yield('title', 'Portfolio Shabian Arsyl Yonanta')</title>
+
+    {{-- Open Graph --}}
+    <meta property="og:title" content="@yield('og_title', 'Portfolio Shabian Arsyl Yonanta')">
+    <meta property="og:description" content="@yield('og_description', 'Junior Web Developer, WordPress Developer & UI/UX Designer. Crafting digital experiences with clean code and creative design.')">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="@yield('og_type', 'website')">
+    <meta property="og:image" content="@yield('og_image', url('/favicon.png'))">
+    <meta property="og:site_name" content="Shabian Arsyl Yonanta">
+
+    {{-- Twitter Card --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('og_title', 'Portfolio Shabian Arsyl Yonanta')">
+    <meta name="twitter:description" content="@yield('og_description', 'Junior Web Developer, WordPress Developer & UI/UX Designer.')">
+    <meta name="twitter:image" content="@yield('og_image', url('/favicon.png'))">
+
+    {{-- Preconnect --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     <style>
         :root {
             --color-dark: #080708;
@@ -36,15 +60,41 @@
         .gradient-text { background: linear-gradient(135deg, var(--color-accent), #a0ff00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .section-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--color-accent), transparent); }
         @media (max-width: 768px) { .section-title { font-size: 1.75rem; } }
+
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            z-index: 1000;
+            padding: 0.5rem 1rem;
+            background: var(--color-accent);
+            color: var(--color-dark);
+            font-weight: 600;
+            transition: top 0.2s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+        *:focus-visible {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+        button:focus-visible, a:focus-visible {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+        img {
+            color: transparent;
+        }
     </style>
     @stack('styles')
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
 </head>
 <body class="antialiased">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     @include('partials.header')
-    <main>
+    <main id="main-content">
         @yield('content')
     </main>
     @include('partials.footer')

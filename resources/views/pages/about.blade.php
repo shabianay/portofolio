@@ -1,5 +1,9 @@
 @extends('layouts.app')
 @section('title', 'About Me - Portfolio Shabian')
+@section('meta_description', 'Learn more about Shabian Arsyl Yonanta - a Junior Web Developer, WordPress Developer & UI/UX Designer based in Surabaya.')
+@section('meta_keywords', 'about Shabian Arsyl, web developer profile, WordPress developer, UI/UX designer Surabaya')
+@section('og_title', 'About Me - Shabian Arsyl Yonanta')
+@section('og_description', 'Learn more about Shabian Arsyl Yonanta - Junior Web Developer & UI/UX Designer.')
 @section('content')
 <section class="pt-32 pb-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -11,7 +15,7 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 items-start mb-16">
             <div class="rounded-2xl overflow-hidden border border-custom">
-                <img src="/storage/portfolio/shabian-profile.png" alt="Shabian Arsyl Yonanta" class="w-full h-auto object-cover">
+                <img src="/storage/portfolio/shabian-profile-6a38887f811e0.webp" alt="Shabian Arsyl Yonanta" class="w-full h-auto object-cover" width="500" height="500" loading="lazy">
             </div>
             <div>
                 <p class="text-accent font-mono text-sm mb-2">Hello, I am</p>
@@ -89,28 +93,28 @@
             <h4 class="text-xl font-semibold mb-6">Organization</h4>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="card p-4 flex items-center gap-4">
-                    <img src="/storage/portfolio/wp/Logo-Himafortic-150x150.png" alt="HIMAFORTIC" class="w-10 h-10 object-contain bg-white rounded p-1">
+                    <img src="/storage/portfolio/wp/Logo-Himafortic-150x150-6a38887fcd60c.webp" alt="HIMAFORTIC" class="w-10 h-10 object-contain">
                     <div>
                         <p class="font-semibold text-sm">Association of Information Management Students (HIMAFORTIC)</p>
                         <p class="text-xs text-gray-500">Head of Department of Communication and Information Technology (KOMINFO)</p>
                     </div>
                 </div>
                 <div class="card p-4 flex items-center gap-4">
-                    <img src="/storage/portfolio/wp/Logo-IMJ-UNESA-150x150.png" alt="IMJ UNESA" class="w-10 h-10 object-contain bg-white rounded p-1">
+                    <img src="/storage/portfolio/wp/Logo-IMJ-UNESA-150x150-6a38887fd2a92.webp" alt="IMJ UNESA" class="w-10 h-10 object-contain">
                     <div>
                         <p class="font-semibold text-sm">Jombang Student Association, Surabaya State University (IMJ UNESA)</p>
                         <p class="text-xs text-gray-500">Member of Cadre Development & Organizational Development Division (DPPO)</p>
                     </div>
                 </div>
                 <div class="card p-4 flex items-center gap-4">
-                    <img src="/storage/portfolio/wp/Logo-AFO-150x150.png" alt="AFO" class="w-10 h-10 object-contain bg-white rounded p-1">
+                    <img src="/storage/portfolio/wp/Logo-AFO-150x150-6a38887fd644a.webp" alt="AFO" class="w-10 h-10 object-contain">
                     <div>
                         <p class="font-semibold text-sm">Photography Activity Club (AFO)</p>
                         <p class="text-xs text-gray-500">Members of Division C (Public Relations) & Division D (Journalism & Collection of Works)</p>
                     </div>
                 </div>
                 <div class="card p-4 flex items-center gap-4">
-                    <img src="/storage/portfolio/wp/Logo-BEM-FT-UNESA-150x150.png" alt="BEM FT" class="w-10 h-10 object-contain bg-white rounded p-1">
+                    <img src="/storage/portfolio/wp/Logo-BEM-FT-UNESA-150x150-6a38887fdbdf9.webp" alt="BEM FT" class="w-10 h-10 object-contain">
                     <div>
                         <p class="font-semibold text-sm">Student Executive Board of the Faculty of Engineering (BEM FT)</p>
                         <p class="text-xs text-gray-500">Member of Communication and Information Staff (KOMINFO)</p>
@@ -124,7 +128,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <img src="/storage/portfolio/wp/Speak-1-150x150.png" alt="Talks" class="w-8 h-8 object-contain">
+                        <img src="/storage/portfolio/wp/Speak-1-150x150-6a38887fe08ab.webp" alt="Talks" class="w-8 h-8 object-contain">
                         <h2 class="text-lg font-bold">Talks, Trainings & Guest Speaking</h2>
                     </div>
                     <ul class="space-y-2 text-sm text-gray-400">
@@ -137,7 +141,7 @@
                 </div>
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <img src="/storage/portfolio/wp/Award-150x150.png" alt="Awards" class="w-8 h-8 object-contain">
+                        <img src="/storage/portfolio/wp/Award-150x150-6a38887fe5963.webp" alt="Awards" class="w-8 h-8 object-contain">
                         <h2 class="text-lg font-bold">Awards & National Competitions</h2>
                     </div>
                     <ul class="space-y-2 text-sm text-gray-400">
@@ -151,7 +155,7 @@
                 </div>
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <img src="/storage/portfolio/wp/Startup-150x150.png" alt="Startup" class="w-8 h-8 object-contain">
+                        <img src="/storage/portfolio/wp/Startup-150x150-6a38887fec6e7.webp" alt="Startup" class="w-8 h-8 object-contain">
                         <h2 class="text-lg font-bold">Startup & Innovation Highlights</h2>
                     </div>
                     <ul class="space-y-2 text-sm text-gray-400">
@@ -161,7 +165,7 @@
                 </div>
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <img src="/storage/portfolio/wp/Social-Impact-150x150.png" alt="Social Impact" class="w-8 h-8 object-contain">
+                        <img src="/storage/portfolio/wp/Social-Impact-150x150-6a38887ff2023.webp" alt="Social Impact" class="w-8 h-8 object-contain">
                         <h2 class="text-lg font-bold">Social Impact & Digital Advocacy</h2>
                     </div>
                     <ul class="space-y-2 text-sm text-gray-400">

@@ -15,6 +15,15 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @php $adminEmail = config('app.admin_email'); @endphp
+                    @if(Auth::user()->email === $adminEmail)
+                        <x-nav-link :href="route('admin.portfolios.index')" :active="request()->routeIs('admin.portfolios.*')">
+                            {{ __('Portfolios') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('admin.certificates.index')" :active="request()->routeIs('admin.certificates.*')">
+                            {{ __('Certificates') }}
+                        </x-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -70,6 +79,15 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            @php $adminEmail = config('app.admin_email'); @endphp
+            @if(Auth::user()->email === $adminEmail)
+                <x-responsive-nav-link :href="route('admin.portfolios.index')" :active="request()->routeIs('admin.portfolios.*')">
+                    {{ __('Portfolios') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('admin.certificates.index')" :active="request()->routeIs('admin.certificates.*')">
+                    {{ __('Certificates') }}
+                </x-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->

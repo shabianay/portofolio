@@ -10,7 +10,7 @@ class Portfolio extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title', 'slug', 'description', 'category',
+        'title', 'slug', 'description',
         'image', 'url', 'client', 'completion_date',
         'is_featured', 'sort_order'
     ];

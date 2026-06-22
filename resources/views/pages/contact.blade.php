@@ -1,5 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Contact - Shabian Arsyl')
+@section('meta_description', 'Get in touch with Shabian Arsyl Yonanta for web development, WordPress, or UI/UX design projects.')
+@section('meta_keywords', 'contact Shabian Arsyl, hire web developer, WordPress freelancer, UI/UX designer contact')
+@section('og_title', 'Contact - Shabian Arsyl Yonanta')
+@section('og_description', 'Get in touch with Shabian Arsyl Yonanta for web development and design projects.')
 @section('content')
 <section class="pt-32 pb-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

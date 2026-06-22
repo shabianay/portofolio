@@ -13,8 +13,8 @@
                 <a href="{{ route('certificate') }}" class="nav-link {{ request()->routeIs('certificate') ? 'active' : '' }}">Certificate</a>
                 <a href="{{ route('contact') }}" class="btn-accent !py-2 !px-5">Contact</a>
             </div>
-            <button class="lg:hidden text-white text-2xl" x-data @click="$refs.mobileMenu.classList.toggle('hidden')">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <button class="lg:hidden text-white text-2xl" x-data @click="$refs.mobileMenu.classList.toggle('hidden')" aria-label="Toggle navigation menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
         </div>
         <div x-ref="mobileMenu" class="hidden lg:hidden pb-4 border-t border-custom pt-4">

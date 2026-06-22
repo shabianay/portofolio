@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PortfolioController;
-use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\PortfolioController as AdminPortfolioController;
+use App\Http\Controllers\Admin\CertificateController as AdminCertificateController;
+use App\Models\Portfolio;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -20,12 +22,26 @@ Route::get('/portfolio/{slug}', [PortfolioController::class, 'show'])->name('por
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::resource('portfolios', AdminPortfolioController::class)->except('show');
+        Route::resource('certificates', AdminCertificateController::class)->except('show');
+    });
+});
+
+Route::get('/robots.txt', function () {
+    return response()->view('robots')->header('Content-Type', 'text/plain');
+});
+
+Route::get('/sitemap.xml', function () {
+    $portfolios = Portfolio::all();
+    return response()->view('sitemap', compact('portfolios'))->header('Content-Type', 'application/xml');
 });
 
 require __DIR__.'/auth.php';
